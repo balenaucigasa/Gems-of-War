@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="38">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"inc [ebx+70] Souls"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+mov [ebx+70],(int)39
+
+originalcode:
+inc [ebx+70]
+add esp,0C
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+4DD8EB:
+jmp newmem
+nop
+returnhere:
+
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+4DD8EB:
+inc [ebx+70]
+add esp,0C
+//Alt: db FF 43 70 83 C4 0C
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"inc [ebx+48] Souls"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+mov [ebx+48],(int)39
+
+originalcode:
+inc [ebx+48]
+mov eax,[edi+000000A8]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+4DD8F1:
+jmp newmem
+nop 4
+returnhere:
+
+
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+4DD8F1:
+inc [ebx+48]
+mov eax,[edi+000000A8]
+//Alt: db FF 43 48 8B 87 A8 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Code :inc [ebx+48]</Description>
+      <AddressString>GameAssembly.dll+4DD8F1</AddressString>
+      <Before>
+        <Byte>43</Byte>
+        <Byte>70</Byte>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>0C</Byte>
+      </Before>
+      <Actual>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+        <Byte>48</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>87</Byte>
+        <Byte>A8</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Code :inc [ebx+70]</Description>
+      <AddressString>GameAssembly.dll+4DD8EB</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>95</Byte>
+        <Byte>88</Byte>
+        <Byte>B8</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+        <Byte>70</Byte>
+      </Actual>
+      <After>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>0C</Byte>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>
