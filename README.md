@@ -1,2 +1,3 @@
 # Gems-of-War
-under construction
+GemsOfWarKickAll.ct
+↳ kill all 
