@@ -1,3 +1,3 @@
 # Gems-of-War
 GemsOfWarKickAll.ct
-↳ kill all 
+↳ kill one or all enemy
