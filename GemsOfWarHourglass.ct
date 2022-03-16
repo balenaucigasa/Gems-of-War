@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"Treasure Hunt Hourglass"</Description>
+      <Color>26D9D5</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+mov ebx,00000001
+
+originalcode:
+add [edi+00000404],ebx
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+1CF26B:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+1CF26B:
+add [edi+00000404],ebx
+//Alt: db 01 9F 04 04 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Code :inc [ebx+48]</Description>
+      <AddressString>GameAssembly.dll+4DD8F1</AddressString>
+      <Before>
+        <Byte>43</Byte>
+        <Byte>70</Byte>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>0C</Byte>
+      </Before>
+      <Actual>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+        <Byte>48</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>87</Byte>
+        <Byte>A8</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Code :inc [ebx+70]</Description>
+      <AddressString>GameAssembly.dll+4DD8EB</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>95</Byte>
+        <Byte>88</Byte>
+        <Byte>B8</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+        <Byte>70</Byte>
+      </Actual>
+      <After>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>0C</Byte>
+        <Byte>FF</Byte>
+        <Byte>43</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Mana :mov [ecx+28],eax</Description>
+      <AddressString>GameAssembly.dll+5D21DC</AddressString>
+      <Before>
+        <Byte>45</Byte>
+        <Byte>0C</Byte>
+        <Byte>6A</Byte>
+        <Byte>00</Byte>
+        <Byte>51</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>41</Byte>
+        <Byte>28</Byte>
+      </Actual>
+      <After>
+        <Byte>E8</Byte>
+        <Byte>5C</Byte>
+        <Byte>10</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>initial Soul :mov [esi+48],00000000</Description>
+      <AddressString>GameAssembly.dll+218867</AddressString>
+      <Before>
+        <Byte>40</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>C7</Byte>
+        <Byte>46</Byte>
+        <Byte>48</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>C7</Byte>
+        <Byte>46</Byte>
+        <Byte>50</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>contor :add [edi+00000404],ebx</Description>
+      <AddressString>GameAssembly.dll+1CF26B</AddressString>
+      <Before>
+        <Byte>08</Byte>
+        <Byte>85</Byte>
+        <Byte>DB</Byte>
+        <Byte>74</Byte>
+        <Byte>35</Byte>
+      </Before>
+      <Actual>
+        <Byte>01</Byte>
+        <Byte>9F</Byte>
+        <Byte>04</Byte>
+        <Byte>04</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>8D</Byte>
+        <Byte>87</Byte>
+        <Byte>04</Byte>
+        <Byte>04</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>TotalGold :mov [edi+24],eax</Description>
+      <AddressString>GameAssembly.dll+272AB6</AddressString>
+      <Before>
+        <Byte>08</Byte>
+        <Byte>8B</Byte>
+        <Byte>00</Byte>
+        <Byte>85</Byte>
+        <Byte>C0</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>47</Byte>
+        <Byte>24</Byte>
+      </Actual>
+      <After>
+        <Byte>5E</Byte>
+        <Byte>66</Byte>
+        <Byte>0F</Byte>
+        <Byte>6E</Byte>
+        <Byte>C0</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>
