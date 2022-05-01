@@ -6,3 +6,7 @@ GemsOfWarKickAll.ct
 GemsOfWarHourglass.ct
 
 ↳ reverse hourglass in Treasure Hunt
+
+GemsOfWarTreasureMap.ct
+
+↳ get one treasure map
