@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>81</ID>
+      <Description>"Trasure Map"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+1C],00000001
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+6B4001:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+6B4001:
+mov [esi+1C],00000000
+//Alt: db C7 46 1C 00 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Mana :add eax,[ebp-1C]</Description>
+      <AddressString>GameAssembly.dll+5CA781</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>7F</Byte>
+        <Byte>65</Byte>
+        <Byte>7F</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>03</Byte>
+        <Byte>45</Byte>
+        <Byte>E4</Byte>
+      </Actual>
+      <After>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>08</Byte>
+        <Byte>89</Byte>
+        <Byte>47</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>initial Soul :mov [esi+48],00000000</Description>
+      <AddressString>GameAssembly.dll+218867</AddressString>
+      <Before>
+        <Byte>40</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>C7</Byte>
+        <Byte>46</Byte>
+        <Byte>48</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>C7</Byte>
+        <Byte>46</Byte>
+        <Byte>50</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>contor :add [edi+00000404],ebx</Description>
+      <AddressString>GameAssembly.dll+1CF26B</AddressString>
+      <Before>
+        <Byte>08</Byte>
+        <Byte>85</Byte>
+        <Byte>DB</Byte>
+        <Byte>74</Byte>
+        <Byte>35</Byte>
+      </Before>
+      <Actual>
+        <Byte>01</Byte>
+        <Byte>9F</Byte>
+        <Byte>04</Byte>
+        <Byte>04</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>8D</Byte>
+        <Byte>87</Byte>
+        <Byte>04</Byte>
+        <Byte>04</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>PuzzlePlayer.GetReward :push ebp</Description>
+      <AddressString>GameAssembly.dll+212EB0</AddressString>
+      <Before>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>55</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>EC</Byte>
+        <Byte>80</Byte>
+        <Byte>3D</Byte>
+        <Byte>03</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FEC</Address>
+      <Comment>Gems [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FF3</Address>
+      <Comment>Souls ?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FFA</Address>
+      <Comment>Key [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4001</Address>
+      <Comment>Maps
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4008</Address>
+      <Comment>XP
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4021</Address>
+      <Comment>? Guild Token
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4028</Address>
+      <Comment>Event Point
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4036</Address>
+      <Comment>Attack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B403D</Address>
+      <Comment>Armor
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4044</Address>
+      <Comment>Life
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B404B</Address>
+      <Comment>Magic
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
