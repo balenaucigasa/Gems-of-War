@@ -1,12 +1,5 @@
-# Gems-of-War, 6.2 Update, 2022 March 10
+# Gems-of-War, 6.3 Update, 2022 May 25
 GemsOfWarKickAll.ct
 
-↳ kill one or all enemy
+↳ kill one or all enemy and more surprises
 
-GemsOfWarHourglass.ct
-
-↳ reverse hourglass in Treasure Hunt
-
-GemsOfWarTreasureMap.ct
-
-↳ get one treasure map
