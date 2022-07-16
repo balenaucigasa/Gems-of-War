@@ -1,4 +1,4 @@
-# Gems-of-War, 6.d Update, 2022 May 25
+# Gems-of-War, 6.4 Update, 2022 July 13
 GemsOfWarKickAll.ct
 
 ↳ kill one or all enemy and more surprises
