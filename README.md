@@ -1,4 +1,4 @@
-# Gems-of-War, 6.4 Update, 2022 July 13
+# Gems-of-War, 6.6 Update, 2022 October 21
 GemsOfWarKickAll.ct
 
 ↳ kill one or all enemy and more surprises
@@ -9,12 +9,14 @@ Get Mana by color
 
 Get Full Mana for ALL at START // start with full mana
 
-No Mana Cost // use this if you dont want "Get Full Mana"
+No Mana Cost 
 
-You get +40 or more Souls //the maximum is 80
+You get more Souls
 
-You get + 200 or more Gold
+You get more Gold
 
-You get +1 Gems
+You get +3 Gems
 
 You get +1 Gold Keys
+
+Get Extra Turn 
