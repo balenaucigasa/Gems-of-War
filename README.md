@@ -1,5 +1,4 @@
-# Gems-of-War, 6.6 Update, 2022 November 8 {Anniversary & Broken Spire Rework}
-GemsOfWarKickAll.ct
+# Gems-of-War, 6.7.5 Update, Jan 11, 2023
 
 ↳ kill one or all enemy and more surprises
 
