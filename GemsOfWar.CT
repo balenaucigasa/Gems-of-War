@@ -2,8 +2,8 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>218</ID>
-      <Description>"Activate when is my turn only [ Kick Heart ][v6.9]Update"</Description>
+      <ID>220</ID>
+      <Description>"Activate when is my turn only [ Kick Heart ][v7]"</Description>
       <Color>8000FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -23,7 +23,7 @@ sub eax,ebx
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+20ECCB:
+"GameAssembly.dll"+222ADB:
 jmp newmem
 returnhere:
 
@@ -33,16 +33,16 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+20ECCB:
+"GameAssembly.dll"+222ADB:
 mov [esi+10],eax
 sub eax,ebx
 //Alt: db 89 46 10 2B C3
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>214</ID>
-      <Description>"No Mana Cost [v6.9]Update"</Description>
-      <Color>808000</Color>
+      <ID>226</ID>
+      <Description>"No Mana Cost [v7]"</Description>
+      <Color>008000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -55,13 +55,13 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-//jl GameAssembly.dll+20F562
+//jl GameAssembly.dll+223386
 mov eax,[ecx+58]
 
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+20F52C:
+"GameAssembly.dll"+22334C:
 jmp newmem
 returnhere:
 
@@ -71,15 +71,15 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+20F52C:
-jl GameAssembly.dll+20F562
+"GameAssembly.dll"+22334C:
+jl GameAssembly.dll+223386
 mov eax,[ecx+58]
-//Alt: db 7C 34 8B 41 58
+//Alt: db 7C 38 8B 41 58
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>213</ID>
-      <Description>"+3 Gem [v6.9]Update"</Description>
+      <ID>225</ID>
+      <Description>"+3 Gem [v7]"</Description>
       <Color>FF0000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -98,7 +98,7 @@ mov [esi+10],00000003
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+87127C:
+"GameAssembly.dll"+7FC24C:
 jmp newmem
 nop 2
 returnhere:
@@ -109,51 +109,14 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+87127C:
+"GameAssembly.dll"+7FC24C:
 mov [esi+10],00000000
 //Alt: db C7 46 10 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>212</ID>
-      <Description>"+1 Gold Key [v6.9]Update"</Description>
-      <Color>FF0000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-mov [esi+18],00000001
-
-exit:
-jmp returnhere
-
-"GameAssembly.dll"+87128A:
-jmp newmem
-nop 2
-returnhere:
-
-
- 
- 
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-"GameAssembly.dll"+87128A:
-mov [esi+18],00000000
-//Alt: db C7 46 18 00 00 00 00
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>216</ID>
-      <Description>"Get Extra Turn [v6.9]Update"</Description>
+      <ID>222</ID>
+      <Description>"Get Extra Turn [v7]"</Description>
       <Color>0080FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -164,15 +127,15 @@ label(originalcode)
 label(exit)
 
 newmem: //this is allocated memory, you have read,write,execute access
-jne GameAssembly.dll+22D48A
+jne GameAssembly.dll+241379
 
 originalcode:
-je GameAssembly.dll+22D48A
+je GameAssembly.dll+241379
 
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+22D318:
+"GameAssembly.dll"+241208:
 jmp newmem
 nop
 returnhere:
@@ -183,14 +146,14 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+22D318:
-je GameAssembly.dll+22D48A
-//Alt: db 0F 84 6C 01 00 00
+"GameAssembly.dll"+241208:
+je GameAssembly.dll+241379
+//Alt: db 0F 84 6B 01 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>217</ID>
-      <Description>"Get Full Mana for ALL at START [v6.9]Update"</Description>
+      <ID>221</ID>
+      <Description>"Get Full Mana for ALL at START [v7]"</Description>
       <Color>0080FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -209,7 +172,7 @@ mov [edi+28],0000001D
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+2125E7:
+"GameAssembly.dll"+2263F0:
 jmp newmem
 nop 2
 returnhere:
@@ -220,14 +183,14 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+2125E7:
+"GameAssembly.dll"+2263F0:
 mov [edi+28],00000000
 //Alt: db C7 47 28 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>211</ID>
-      <Description>"+Gold [v6.9]Update"</Description>
+      <ID>223</ID>
+      <Description>"+Gold [v7]"</Description>
       <Color>FF0000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -246,7 +209,7 @@ mov [esi+0C],00000064
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+871275:
+"GameAssembly.dll"+7FC245:
 jmp newmem
 nop 2
 returnhere:
@@ -257,14 +220,14 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+871275:
+"GameAssembly.dll"+7FC245:
 mov [esi+0C],00000000
 //Alt: db C7 46 0C 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>210</ID>
-      <Description>"+Soul [v6.9]Update"</Description>
+      <ID>224</ID>
+      <Description>"+Soul [v7]"</Description>
       <Color>FF0000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -283,7 +246,7 @@ mov [esi+14],00000050
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+871283:
+"GameAssembly.dll"+7FC253:
 jmp newmem
 nop 2
 returnhere:
@@ -294,48 +257,9 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+871283:
+"GameAssembly.dll"+7FC253:
 mov [esi+14],00000000
 //Alt: db C7 46 14 00 00 00 00
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>219</ID>
-      <Description>"AdjustSpellPower"</Description>
-      <Color>400040</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-mov [edi+24],0000015E
-add esp,10
-
-exit:
-jmp returnhere
-
-"GameAssembly.dll"+20F3A4:
-jmp newmem
-nop
-returnhere:
-
-
- 
- 
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-"GameAssembly.dll"+20F3A4:
-mov [edi+24],eax
-add esp,10
-//Alt: db 89 47 24 83 C4 10
 </AssemblerScript>
     </CheatEntry>
   </CheatEntries>
