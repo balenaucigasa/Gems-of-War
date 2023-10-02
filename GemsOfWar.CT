@@ -2,9 +2,9 @@
 <CheatTable CheatEngineTableVersion="42">
   <CheatEntries>
     <CheatEntry>
-      <ID>220</ID>
-      <Description>"Activate when is my turn only [ Kick Heart ][v7]"</Description>
-      <Color>8000FF</Color>
+      <ID>236</ID>
+      <Description>"Activate when is my turn only [ Kick Heart ][ v7.1 ]"</Description>
+      <Color>0000FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -23,7 +23,7 @@ sub eax,ebx
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+222ADB:
+"GameAssembly.dll"+37AAFB:
 jmp newmem
 returnhere:
 
@@ -33,15 +33,15 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+222ADB:
+"GameAssembly.dll"+37AAFB:
 mov [esi+10],eax
 sub eax,ebx
 //Alt: db 89 46 10 2B C3
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>226</ID>
-      <Description>"No Mana Cost [v7]"</Description>
+      <ID>237</ID>
+      <Description>"No Need Mana [v7.1]"</Description>
       <Color>008000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -55,13 +55,13 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-//jl GameAssembly.dll+223386
+//jl GameAssembly.dll+37B3A6
 mov eax,[ecx+58]
 
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+22334C:
+"GameAssembly.dll"+37B36C:
 jmp newmem
 returnhere:
 
@@ -71,52 +71,15 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+22334C:
-jl GameAssembly.dll+223386
+"GameAssembly.dll"+37B36C:
+jl GameAssembly.dll+37B3A6
 mov eax,[ecx+58]
 //Alt: db 7C 38 8B 41 58
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>225</ID>
-      <Description>"+3 Gem [v7]"</Description>
-      <Color>FF0000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-mov [esi+10],00000003
-
-exit:
-jmp returnhere
-
-"GameAssembly.dll"+7FC24C:
-jmp newmem
-nop 2
-returnhere:
-
-
- 
- 
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-"GameAssembly.dll"+7FC24C:
-mov [esi+10],00000000
-//Alt: db C7 46 10 00 00 00 00
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>222</ID>
-      <Description>"Get Extra Turn [v7]"</Description>
+      <ID>238</ID>
+      <Description>"Get Extra Turn [v7.1]"</Description>
       <Color>0080FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -127,15 +90,15 @@ label(originalcode)
 label(exit)
 
 newmem: //this is allocated memory, you have read,write,execute access
-jne GameAssembly.dll+241379
+jne GameAssembly.dll+399489
 
 originalcode:
-je GameAssembly.dll+241379
+je GameAssembly.dll+399489
 
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+241208:
+"GameAssembly.dll"+399318:
 jmp newmem
 nop
 returnhere:
@@ -146,14 +109,14 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+241208:
-je GameAssembly.dll+241379
+"GameAssembly.dll"+399318:
+je GameAssembly.dll+399489
 //Alt: db 0F 84 6B 01 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>221</ID>
-      <Description>"Get Full Mana for ALL at START [v7]"</Description>
+      <ID>239</ID>
+      <Description>"Get Full Mana for ALL at START [v7.1]"</Description>
       <Color>0080FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
@@ -172,7 +135,7 @@ mov [edi+28],0000001D
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+2263F0:
+"GameAssembly.dll"+37E3D0:
 jmp newmem
 nop 2
 returnhere:
@@ -183,15 +146,89 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+2263F0:
+"GameAssembly.dll"+37E3D0:
 mov [edi+28],00000000
 //Alt: db C7 47 28 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>223</ID>
-      <Description>"+Gold [v7]"</Description>
-      <Color>FF0000</Color>
+      <ID>234</ID>
+      <Description>"+3 Gem [v7.1]"</Description>
+      <Color>A00000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+10],00000003
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+96D9DC:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+96D9DC:
+mov [esi+10],00000000
+//Alt: db C7 46 10 00 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>235</ID>
+      <Description>"+5 gold key [v7.1]"</Description>
+      <Color>A00000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+18],00000005
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+96D9EA:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+96D9EA:
+mov [esi+18],00000000
+//Alt: db C7 46 18 00 00 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>233</ID>
+      <Description>"+Gold [v7.1]"</Description>
+      <Color>A00000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -209,7 +246,7 @@ mov [esi+0C],00000064
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+7FC245:
+"GameAssembly.dll"+96D9D5:
 jmp newmem
 nop 2
 returnhere:
@@ -220,15 +257,15 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+7FC245:
+"GameAssembly.dll"+96D9D5:
 mov [esi+0C],00000000
 //Alt: db C7 46 0C 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
-      <ID>224</ID>
-      <Description>"+Soul [v7]"</Description>
-      <Color>FF0000</Color>
+      <ID>232</ID>
+      <Description>"+Soul [v7.1]"</Description>
+      <Color>A00000</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -246,7 +283,7 @@ mov [esi+14],00000050
 exit:
 jmp returnhere
 
-"GameAssembly.dll"+7FC253:
+"GameAssembly.dll"+96D9E3:
 jmp newmem
 nop 2
 returnhere:
@@ -257,37 +294,12 @@ returnhere:
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
-"GameAssembly.dll"+7FC253:
+"GameAssembly.dll"+96D9E3:
 mov [esi+14],00000000
 //Alt: db C7 46 14 00 00 00 00
 </AssemblerScript>
     </CheatEntry>
   </CheatEntries>
-  <CheatCodes>
-    <CodeEntry>
-      <Description>Puzzle.Troop.Init -&gt; Attack :mov [edi+18],eax</Description>
-      <AddressString>GameAssembly.dll+20F896</AddressString>
-      <Before>
-        <Byte>E8</Byte>
-        <Byte>AA</Byte>
-        <Byte>9C</Byte>
-        <Byte>ED</Byte>
-        <Byte>00</Byte>
-      </Before>
-      <Actual>
-        <Byte>89</Byte>
-        <Byte>47</Byte>
-        <Byte>18</Byte>
-      </Actual>
-      <After>
-        <Byte>83</Byte>
-        <Byte>C4</Byte>
-        <Byte>18</Byte>
-        <Byte>8B</Byte>
-        <Byte>8F</Byte>
-      </After>
-    </CodeEntry>
-  </CheatCodes>
   <UserdefinedSymbols/>
   <Structures StructVersion="2">
     <Structure Name="unnamed structure" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
@@ -7915,6 +7927,640 @@ mov [esi+14],00000000
         <Element Offset="160" Vartype="Pointer" Bytesize="4" OffsetHex="000000A0" Description="WanderingMerchantTraitSkillBonuses" DisplayMethod="unsigned integer"/>
       </Elements>
     </Structure>
+    <Structure Name="String" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="Length" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Unicode String" Bytesize="128" OffsetHex="0000000C" Description="Value" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="String" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="Length" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Unicode String" Bytesize="128" OffsetHex="0000000C" Description="Value" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="PuzzlePlayer" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="m_CachedPtr" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="Pointer" Bytesize="4" OffsetHex="0000000C" Description="TroopsGroup" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="Pointer" Bytesize="4" OffsetHex="00000010" Description="TurnIndicator" DisplayMethod="unsigned integer"/>
+        <Element Offset="20" Vartype="Pointer" Bytesize="4" OffsetHex="00000014" Description="OnTroopDied" DisplayMethod="unsigned integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000018" Description="BonusGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000001C" Description="BonusSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" Description="FourOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000024" Description="FiveOfAKinds" DisplayMethod="unsigned integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000028" Description="HeroicEfforts" DisplayMethod="unsigned integer"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000002C" Description="Keys" DisplayMethod="unsigned integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000030" Description="Runes" DisplayMethod="unsigned integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000034" Description="MatchesMade" DisplayMethod="unsigned integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000038" Description="GemsDestroyed" DisplayMethod="unsigned integer"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000003C" Description="TotalCascades" DisplayMethod="unsigned integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000040" Description="m_nEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000044" Description="m_nEarnedGold_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" Description="m_nEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" Description="m_nEarnedSouls_Bonus" DisplayMethod="unsigned integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000050" Description="m_nEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000054" Description="m_nEarnedGold_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000058" Description="m_nEarnedSouls_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000005C" Description="m_nEarnedMaps_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000060" Description="m_nEarnedKeys_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000064" Description="m_nEarnedKills_Max" DisplayMethod="unsigned integer"/>
+        <Element Offset="104" Vartype="Pointer" Bytesize="4" OffsetHex="00000068" Description="scoreDataCurrentValues" DisplayMethod="unsigned integer"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" OffsetHex="0000006C" Description="scoreData" DisplayMethod="unsigned integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000070" Description="TroopsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="116" Vartype="Pointer" Bytesize="4" OffsetHex="00000074" Description="troopIdsKilled" DisplayMethod="unsigned integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="4" OffsetHex="00000078" Description="troopIdsSummoned" DisplayMethod="unsigned integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="4" OffsetHex="0000007C" Description="troopIdsTransformed" DisplayMethod="unsigned integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="4" OffsetHex="00000080" Description="Troops" DisplayMethod="unsigned integer"/>
+        <Element Offset="132" Vartype="Byte" Bytesize="1" OffsetHex="00000084" Description="ExtraTurn" DisplayMethod="unsigned integer"/>
+        <Element Offset="133" Vartype="Byte" Bytesize="1" OffsetHex="00000085" Description="DieOnHit" DisplayMethod="unsigned integer"/>
+        <Element Offset="134" Vartype="Byte" Bytesize="1" OffsetHex="00000086" Description="Dead" DisplayMethod="unsigned integer"/>
+        <Element Offset="135" Vartype="Byte" Bytesize="1" OffsetHex="00000087" Description="WaitingForTargetTroop" DisplayMethod="unsigned integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000088" Description="CannotSelectTroopOfIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000008C" Description="TroopTargetedForDamage" DisplayMethod="unsigned integer"/>
+        <Element Offset="144" Vartype="Pointer" Bytesize="4" OffsetHex="00000090" Description="GemMasteries" DisplayMethod="unsigned integer"/>
+        <Element Offset="148" Vartype="Byte" Bytesize="1" OffsetHex="00000094" Description="AffectedByJinx" DisplayMethod="unsigned integer"/>
+        <Element Offset="149" Vartype="Byte" Bytesize="1" OffsetHex="00000095" Description="Dodge" DisplayMethod="unsigned integer"/>
+        <Element Offset="152" Vartype="Pointer" Bytesize="4" OffsetHex="00000098" Description="StartingTroopNames" DisplayMethod="unsigned integer"/>
+        <Element Offset="156" Vartype="Pointer" Bytesize="4" OffsetHex="0000009C" Description="disabledTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="160" Vartype="Byte" Bytesize="1" OffsetHex="000000A0" Description="IsAI" DisplayMethod="unsigned integer"/>
+        <Element Offset="161" Vartype="Byte" Bytesize="1" OffsetHex="000000A1" Description="IsAutoPlayModeOn" DisplayMethod="unsigned integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000A4" Description="PlayerIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="168" Vartype="Pointer" Bytesize="4" OffsetHex="000000A8" Description="PuzzleUI" DisplayMethod="unsigned integer"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="UserData" DisplayMethod="unsigned integer"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="4" OffsetHex="000000B0" Description="HijackKillTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="180" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B4" Description="m_nCombatDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="184" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B8" Description="m_nSpellsCast" DisplayMethod="unsigned integer"/>
+        <Element Offset="188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000BC" Description="m_nSpellDamageDone" DisplayMethod="unsigned integer"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C0" Description="m_nTurnsTaken" DisplayMethod="unsigned integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C4" Description="m_nManaEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="200" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000C8" Description="m_nExtraTurnsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="204" Vartype="Pointer" Bytesize="4" OffsetHex="000000CC" Description="m_aManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="208" Vartype="Pointer" Bytesize="4" OffsetHex="000000D0" Description="m_aExplodedManaColorsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" Description="m_aSpecialGemsEarned" DisplayMethod="unsigned integer"/>
+        <Element Offset="216" Vartype="Pointer" Bytesize="4" OffsetHex="000000D8" Description="StatsForAllTroops" DisplayMethod="unsigned integer"/>
+        <Element Offset="220" Vartype="Byte" Bytesize="1" OffsetHex="000000DC" Description="IsEndOfRoundTroopDataCollected" DisplayMethod="unsigned integer"/>
+        <Element Offset="221" Vartype="Byte" Bytesize="1" OffsetHex="000000DD" Description="&lt;HeroUsedWeapon&gt;k__BackingField" DisplayMethod="unsigned integer"/>
+        <Element Offset="224" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E0" Description="SelectedIndex" DisplayMethod="unsigned integer"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E4" Description="_PrevEarnedGold" DisplayMethod="unsigned integer"/>
+        <Element Offset="232" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000E8" Description="_PrevGoldMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="236" Vartype="Pointer" Bytesize="4" OffsetHex="000000EC" ChildStruct="String" Description="_DisplayGoldString" DisplayMethod="unsigned integer"/>
+        <Element Offset="240" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F0" Description="_PrevEarnedSouls" DisplayMethod="unsigned integer"/>
+        <Element Offset="244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000F4" Description="_PrevSoulsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="248" Vartype="Pointer" Bytesize="4" OffsetHex="000000F8" ChildStruct="String" Description="_DisplaySoulsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="252" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000FC" Description="_PrevEarnedMaps" DisplayMethod="unsigned integer"/>
+        <Element Offset="256" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000100" Description="_PrevMapsMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="260" Vartype="Pointer" Bytesize="4" OffsetHex="00000104" ChildStruct="String" Description="_DisplayMapsString" DisplayMethod="unsigned integer"/>
+        <Element Offset="264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000108" Description="_PrevEarnedEventScore" DisplayMethod="unsigned integer"/>
+        <Element Offset="268" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000010C" Description="_PrevEventScoreMax" DisplayMethod="unsigned integer"/>
+        <Element Offset="272" Vartype="Pointer" Bytesize="4" OffsetHex="00000110" ChildStruct="String" Description="_ModularEventScoreString" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="Point" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000008" Description="X" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000000C" Description="Y" DisplayMethod="unsigned integer"/>
+      </Elements>
+    </Structure>
   </Structures>
   <DisassemblerComments>
     <DisassemblerComment>
@@ -8095,6 +8741,46 @@ mov [esi+14],00000000
     <DisassemblerComment>
       <Address>"GameAssembly.dll"+718BE6</Address>
       <Comment>Attack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9D5</Address>
+      <Comment>Gold
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9DC</Address>
+      <Comment>Gems / max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9E3</Address>
+      <Comment>Souls
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9EA</Address>
+      <Comment>Keys / Max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9F1</Address>
+      <Comment>Maps Treasure / Max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9F8</Address>
+      <Comment>XP / do not change or get ban
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9FF</Address>
+      <Comment>Four Of A Kinds
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96DA06</Address>
+      <Comment>Five Of A Kinds
 </Comment>
     </DisassemblerComment>
   </DisassemblerComments>
