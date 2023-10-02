@@ -1,4 +1,4 @@
-# Gems-of-War, v7 Update, July 18, 2023
+# Gems-of-War, v7.1 Update, September 6, 2023
 
 ↳ kill one or all enemy and more surprises
 
