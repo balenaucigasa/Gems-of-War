@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>236</ID>
+      <Description>"Activate when is my turn only [ Kick Heart ][ v7.3 ]"</Description>
+      <Color>0000FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+//PuzzleTroop.AdjustHealth
+
+originalcode:
+mov [esi+10],(int)0
+sub eax,ebx
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+A1076B:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+A1076B:
+mov [esi+10],eax
+sub eax,ebx
+//Alt: db 89 46 10 2B C3
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>240</ID>
+      <Description>"No Need Mana [v7.3]"</Description>
+      <Color>008000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//jl GameAssembly.dll+A11016
+mov eax,[ecx+58]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+A10FDC:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+A10FDC:
+db 7C 38 8B 41 58
+//jl GameAssembly.dll+A11016
+//mov eax,[ecx+58]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>241</ID>
+      <Description>"Get Extra Turn [v7.3]"</Description>
+      <Color>0080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+jne GameAssembly.dll+395F79
+
+originalcode:
+je GameAssembly.dll+395F79
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+395E08:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+395E08:
+db 0F 84 6B 01 00 00
+//je GameAssembly.dll+39B979
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>242</ID>
+      <Description>"Get Full Mana for ALL at START [v7.3]"</Description>
+      <Color>0080FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [edi+28],0000001A
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+A14075:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+A14075:
+db C7 47 28 00 00 00 00
+//mov [edi+28],00000000
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>243</ID>
+      <Description>"+3 Gem [v7.3]"</Description>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+10],00000003
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+9A601C:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+9A601C:
+db C7 46 10 00 00 00 00
+//mov [esi+10],00000000
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>244</ID>
+      <Description>"+5 gold key [v7.3]"</Description>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+18],00000005
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+9A602A:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+9A602A:
+db C7 46 18 00 00 00 00
+//mov [esi+18],00000000
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>245</ID>
+      <Description>"+Gold [v7.3]"</Description>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+0C],00000064
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+9A6015:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+9A6015:
+db C7 46 0C 00 00 00 00
+//mov [esi+0C],00000000
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>246</ID>
+      <Description>"+Soul [v7.3]"</Description>
+      <Color>FF0000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov [esi+14],00000050
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+9A6023:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+9A6023:
+db C7 46 14 00 00 00 00
+//mov [esi+14],00000000
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>CollectRewardsMenu.UpdateToTierRewards :push ebp</Description>
+      <AddressString>GameAssembly.dll+6E62F0</AddressString>
+      <Before>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>55</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>EC</Byte>
+        <Byte>80</Byte>
+        <Byte>3D</Byte>
+        <Byte>5D</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>CollectRewardsMenu.UpdateCurrentRewardValues :push ebp</Description>
+      <AddressString>GameAssembly.dll+6E62A0</AddressString>
+      <Before>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>55</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>EC</Byte>
+        <Byte>8B</Byte>
+        <Byte>55</Byte>
+        <Byte>0C</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>PuzzleTroop.GetSpellPower :mov eax,[ecx+24]</Description>
+      <AddressString>GameAssembly.dll+37F9E9</AddressString>
+      <Before>
+        <Byte>78</Byte>
+        <Byte>3C</Byte>
+        <Byte>00</Byte>
+        <Byte>7F</Byte>
+        <Byte>05</Byte>
+      </Before>
+      <Actual>
+        <Byte>8B</Byte>
+        <Byte>41</Byte>
+        <Byte>24</Byte>
+      </Actual>
+      <After>
+        <Byte>5D</Byte>
+        <Byte>C3</Byte>
+        <Byte>33</Byte>
+        <Byte>C0</Byte>
+        <Byte>5D</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>OrbData :push ebp</Description>
+      <AddressString>GameAssembly.dll+554C40</AddressString>
+      <Before>
+        <Byte>DF</Byte>
+        <Byte>FF</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>55</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>EC</Byte>
+        <Byte>56</Byte>
+        <Byte>8B</Byte>
+        <Byte>75</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+3804AB</Address>
+      <Comment>Attack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+3804E9</Address>
+      <Comment>?shields
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+3804F1</Address>
+      <Comment>Shields
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+380525</Address>
+      <Comment>Health
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+380559</Address>
+      <Comment>Spell Power
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+380565</Address>
+      <Comment>Mana
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+41A7B6</Address>
+      <Comment>Gold
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+41A7BD</Address>
+      <Comment>Soul
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+41A7EB</Address>
+      <Comment>Gold Extra
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+41A7F2</Address>
+      <Comment>Soul Extra
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+47D5D7</Address>
+      <Comment>Treasure Maps
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+47D5DE</Address>
+      <Comment>Gold Key
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FEC</Address>
+      <Comment>Gems [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FF3</Address>
+      <Comment>?? Souls
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B3FFA</Address>
+      <Comment>Gold Keys [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4001</Address>
+      <Comment>Maps [Maxim 10]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4008</Address>
+      <Comment>XP [Maxim x10]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4021</Address>
+      <Comment>?? Guild Token
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4028</Address>
+      <Comment>Event Point
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4036</Address>
+      <Comment>Attack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B403D</Address>
+      <Comment>Armor
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B4044</Address>
+      <Comment>Life
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6B404B</Address>
+      <Comment>Magic
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFCE5</Address>
+      <Comment>Gold
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFCEC</Address>
+      <Comment>Gems [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFCF3</Address>
+      <Comment>Souls
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFCFA</Address>
+      <Comment>Key [Maxim 5]
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD01</Address>
+      <Comment>Maps
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD08</Address>
+      <Comment>XP (Kills)
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD0F</Address>
+      <Comment>FourOfAKinds
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD16</Address>
+      <Comment>FiveOfAKinds
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD28</Address>
+      <Comment>Event Point
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD2F</Address>
+      <Comment>LiveEventScore
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD36</Address>
+      <Comment>BonusAttack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD3D</Address>
+      <Comment>BonusArmor
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD44</Address>
+      <Comment>BonusHealth
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD4B</Address>
+      <Comment>BonusMagic
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+6DFD52</Address>
+      <Comment>Glory
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718B95</Address>
+      <Comment>Gold
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718B9C</Address>
+      <Comment>Gems
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718BA3</Address>
+      <Comment>Soul
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718BAA</Address>
+      <Comment>Gold key
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718BB1</Address>
+      <Comment>Maps
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+718BE6</Address>
+      <Comment>Attack
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9D5</Address>
+      <Comment>Gold
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9DC</Address>
+      <Comment>Gems / max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9E3</Address>
+      <Comment>Souls
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9EA</Address>
+      <Comment>Keys / Max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9F1</Address>
+      <Comment>Maps Treasure / Max 5
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9F8</Address>
+      <Comment>XP / do not change or get ban
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96D9FF</Address>
+      <Comment>Four Of A Kinds
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"GameAssembly.dll"+96DA06</Address>
+      <Comment>Five Of A Kinds
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
