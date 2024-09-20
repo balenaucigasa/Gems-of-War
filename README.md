@@ -1,4 +1,4 @@
-# Gems-of-War, v7.3 Update, December 14, 2023
+# Gems-of-War, v8.1a Update, September 20, 2024
 
 ↳ kill one or all enemy and more surprises
 
@@ -12,6 +12,4 @@ You get more Gold
 
 You get +3 Gems
 
-You get +1 Gold Keys
-
-Get Extra Turn 
+You get +5 Gold Keys
