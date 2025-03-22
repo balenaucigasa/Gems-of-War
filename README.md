@@ -1,15 +1,14 @@
-# Gems-of-War, v8.1a Update, September 20, 2024
+# Gems-of-War, v8.4 Update, March 19, 2025
 
-↳ kill one or all enemy and more surprises
+↳ BOOM -> kill one or all enemy and more surprises
 
 Get Full Mana for ALL at START // start with full mana
 
-No Mana Cost 
+No Need Mana 
 
-You get more Souls
+Get Extra Turn
 
-You get more Gold
+Reward.AddSouls
 
-You get +3 Gems
+Reward.AddGold to 3 Gems
 
-You get +5 Gold Keys
