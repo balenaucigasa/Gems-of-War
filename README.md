@@ -8,7 +8,5 @@ No Need Mana
 
 Get Extra Turn
 
-Reward.AddSouls
-
-Reward.AddGold to 3 Gems
+Reward Gems Souls Keys
 
